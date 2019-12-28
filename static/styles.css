@@ -1,0 +1,112 @@
+body {
+	background-color: #eee;
+}
+
+main .form-control 
+{
+	width: auto;
+}
+
+
+#welcome {
+	position: absolute;
+	width: auto;
+	max-width: 100%;
+	margin-left: 200px;
+	margin-right: 200px;
+	padding: 10px;
+	left: 50px;
+}
+
+
+#chat {
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	width: auto;
+	max-width: 100%;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 300px;
+	padding: 10px;
+	left: 50px;
+	min-width: 50%;
+	min-height: 100px;
+	border-radius: 10px;
+}
+#chat h1 {
+	text-align: center;
+}
+
+#channel_list, #users {
+	position: fixed;
+	flex-direction: column;
+	min-width: 190px;
+	margin-right: 100px;
+	width: 200px;
+	border: 1px solid black;
+	padding: 10px;
+	left: 50px;
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+nav {
+	width: 100%;
+	padding: 10px;
+}
+
+
+#create_channel {
+	display: inline-flex;
+}
+
+#channel {
+	padding-right: 10px;
+}
+
+header {
+	font-size: 1.5em;
+	text-align: center;
+	align-items: center;
+	left: -50px;
+}
+ul {
+	list-style: none;
+}
+
+#channel_list ul, #users ul {
+	width: 100%;
+}
+
+#channel_list li, #users li {
+	border: 1px solid grey;
+	width: 100%;
+	padding: 5px;
+	background-color: white;
+}
+
+
+#channel_list li:hover, #users li:hover {
+	background-color: #868e96;
+	color: white;
+}
+
+#messages div {
+	position: relative;
+	border-radius: 5px;
+	display: block;
+	padding: 5px;
+}
+
+#messages div span {
+	background-color: #eee;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#users {
+	
+	margin-top: 300px;
+}
