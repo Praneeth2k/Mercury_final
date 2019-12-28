@@ -1,0 +1,14 @@
+{% macro displayField(fieldName,placeholderValue) %}           <!-- a macro is a sort-of function which can be called multiple times and reduces number of lines-->
+
+<div>
+    {{ fieldName(class_="form_control", placeholder=placeholderValue, **kwargs) }}       <!-- autocomplete="off", autofocus=true are necessary only for Username field, and not for password and confirm password. Therefore, we can replace them by **kwargs-->
+    
+    <!-- Error message-->
+    <ul>
+        {% for error in fieldName.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endmacro %}
