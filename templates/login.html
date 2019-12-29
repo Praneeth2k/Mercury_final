@@ -1,18 +1,148 @@
 {% from 'form-helper.html' import displayField %}
-{% extends 'form-layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<link href="static/style.css" rel="stylesheet">
+<!--===============================================================================================-->
+</head>
 
-{% block title %}Login{% endblock %}
 
-{% block content %}
-    <h2>Login</h2>
-    <p>Enter your username and password to login and start Mercury</p>
 
-    <form action="{{ url_for('login')}}" method="POST">
-        {{ displayField(form.username, "Username", autocomplete="off", autofocus=true)}}
-        {{ displayField(form.password, "Password")}}
-        <div>
-            {{ form.submit_button }}
-        </div>
-        {{ form.csrf_token }}                                               
-    </form>
-{% endblock %}
+
+<body>
+    {% with messages = get_flashed_messages(with_categories = true) %}      <!--messages is a tuple of flashed messages. It can be empty, hence the following if statement.-->
+        {% if messages %}
+            <!--messages is a tuple in the form ('category', 'message')-->
+            <div>
+                {{ messages[0][1] }}
+            </div>
+            <hr>
+        {% endif %}
+    {% endwith %}
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+	<a class="navbar-brand" href="#"><img src="static/img/mercury.png"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon" ></span>	
+	</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="Login.html">Login</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="signup.html">Signup</a>
+			</li>
+			
+			
+			
+
+		</ul> 
+
+		
+	</div>
+</div>
+</nav>
+<br><br><br>
+<div align="center">
+    <h1>Login</h1>
+						
+            <br>
+				
+                <form action="{{ url_for('login') }}" method="POST">
+					
+						{{ displayField(form.username, "Username", autocomplete="off", autofocus=true)}}
+					    <br>
+					
+						{{ displayField(form.password, "Password")}}
+					
+                        <br>
+                        <div>
+                            {{ form.submit_button }}
+                        </div>
+                        {{ form.csrf_token }}
+                </form>
+
+					<ul class="login-more p-t-190">
+						<li class="m-b-8">
+							
+
+							<a href="#" class="txt2">
+								Forgot Password?
+							</a>
+						</li>
+
+						<li>
+							<span class="txt1">
+								Don’t have an account?
+							</span>
+
+							<a href="#" class="txt2">
+								Sign up
+							</a>
+						</li>
+					</ul>
+	
+</div>
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="static/js/main.js"></script>
+
+
+<footer>
+<div class="container-fluid" padding>
+	<div class="row text-center">
+		<div class="col-md-4">
+			<img src="static/img/mercury.png">
+			<hr class="light">
+			<p>555-555-55555</p>
+		</div>
+	</div>
+</div>
+</footer>
+</body>
+</html>
