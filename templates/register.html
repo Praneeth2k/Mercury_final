@@ -29,6 +29,21 @@
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 	<link href="static/style.css" rel="stylesheet">
 <!--===============================================================================================-->
+<script type=text/javascript>
+    function func1()
+        {
+        
+        window.location.href="{{ url_for('index')}}";
+        }
+	function func2(){
+		window.location.href="{{ url_for('login')}}";
+	}
+	function fun3()
+		{
+        window.location.href="{{url_for('register')}}";
+		}
+	
+	</script>
 </head>
 
 
@@ -55,13 +70,13 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="index.html">Home</a>
+				<a onclick="func1()" class="nav-link">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="Login.html">Login</a>
+				<a onclick="func2()" class="nav-link">Login</a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="signup.html">Signup</a>
+				<a onclick="func3()" class="nav-link">Signup</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="index.html#about">About</a>
