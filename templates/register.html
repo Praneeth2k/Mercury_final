@@ -25,9 +25,13 @@
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
+
 	<link rel="stylesheet" type="text/css" href="static/css/util.css">
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 	<link href="static/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+	<link rel="stylesheet" href="static/wickedcss.min.css">	
+	
 <!--===============================================================================================-->
 <script type=text/javascript>
     function func1()
@@ -38,12 +42,13 @@
 	function func2(){
 		window.location.href="{{ url_for('login')}}";
 	}
-	function fun3()
+	function func3()
 		{
         window.location.href="{{url_for('register')}}";
 		}
 	
 	</script>
+	
 </head>
 
 
@@ -63,26 +68,21 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 <div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="static/img/mercury.png"></a>
+	<div class="slideDown"><div class="shake-slow"><a class="navbar-brand" href="#"><img src="static/img/mercury.png"></a></div></div>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 			<span class="navbar-toggler-icon" ></span>	
 	</button>
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a onclick="func1()" class="nav-link">Home</a>
+				<a onclick="func1()" class="nav-link" href="#">Home</a>
 			</li>
 			<li class="nav-item">
-				<a onclick="func2()" class="nav-link">Login</a>
+				<a onclick="func2()" class="nav-link" href="#">Login</a>
 			</li>
 			<li class="nav-item active">
-				<a onclick="func3()" class="nav-link">Signup</a>
+				<a onclick="func3()" class="nav-link" href="#">Signup</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="index.html#about">About</a>
-			</li>
-			
-
 		</ul> 
 
 		
@@ -110,6 +110,19 @@
 
     {{ form.csrf_token }}                                               <!-- prevents csrf attacks -->
 </form>
+
+<ul style="list-style-type:none" class="login-more p-t-190" align="center">
+	<li>
+		<span class="txt1">
+			Already have an account?
+		</span>
+
+		<a href="#" onclick="func2()" class="txt2">
+			Log in
+		</a>
+	</li>
+</ul>
+
 	
 
 	<div id="dropDownSelect1"></div>
@@ -132,16 +145,16 @@
 	<script src="static/js/main.js"></script>
 
 
-<footer>
-<div class="container-fluid" padding>
-	<div class="row text-center">
-		<div class="col-md-4">
-			<img src="static/img/mercury.png">
-			<hr class="light">
-			<p>555-555-55555</p>
+	<footer>
+	<div class="container-fluid" padding>
+		<div id="footer" class="shake-slow"><div class="row text-center">
+			<div class="col-md-4">
+				<img src="static/img/mercury.png">
+				<hr class="light">
+				
+			</div></div>
 		</div>
 	</div>
-</div>
-</footer>
-</body>
+	</footer>
+			</body>
 </html>

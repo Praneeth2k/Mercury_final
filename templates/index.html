@@ -10,6 +10,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="static/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+	<link rel="stylesheet" href="static/wickedcss.min.css">	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
 	<script type="text/javascript">
 	
         function func1()
@@ -21,7 +26,30 @@
         {
         window.location.href="{{ url_for('register')}}";
         }
-    </script>
+	</script>
+
+	<script> 
+		$(window).scroll(function() { 
+		  $('#image-roll').each(function(){ 
+		   var imagePos = $(this).offset().top; 
+		   var topOfWindow = $(window).scrollTop(); 
+		   if (imagePos < topOfWindow+650) { 
+		   $(this).addClass("rollerLeft"); 
+		   } 
+		  }); 
+		}); 
+
+		$(window).scroll(function() { 
+		  $('#footer').each(function(){ 
+		   var imagePos = $(this).offset().top; 
+		   var topOfWindow = $(window).scrollTop(); 
+		   if (imagePos < topOfWindow+650) { 
+		   $(this).addClass("shake-slow"); 
+		   } 
+		  }); 
+		});
+	</script>
+
 </head>
 <body>
 		
@@ -30,7 +58,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 <div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="static/img/mercury.png"></a>
+	<div class="slideDown"><div class="shake-slow"><a class="navbar-brand" href="#"><img src="static/img/mercury.png"></a></div></div>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 			<span class="navbar-toggler-icon" ></span>	
 	</button>
@@ -40,10 +68,10 @@
 				<a class="nav-link" href="#">Home</a>
 			</li>
 			<li class="nav-item">
-				<a onclick="func1()" class="nav-link" >Login</a>
+				<a onclick="func1()" class="nav-link" href="#">Login</a>
 			</li>
 			<li class="nav-item">
-					<a onclick="func2()" class="nav-link" >Signup</a>
+					<a onclick="func2()" class="nav-link" href="#">Signup</a>
 				</li>
 				
 			<li class="nav-item">
@@ -78,7 +106,7 @@
 	<div class="carousel-item active">
 		<img src="static/img/carousel-3.png">
 		<div class="carousel-caption">
-			<h1 style="color: mediumspringgreen;" class="display-2">MERCURY</h1>
+			<div class="shake-slow"><h1 style="color: mediumspringgreen;" class="display-2">MERCURY</h1></div>
 			<button onClick="func1()" type="button" class="btn btn-outline-light btn-lg" >Log in</button>
 			<button onClick="func2()" type="button" class="btn btn-primary btn-lg">Sign up</button>
 			
@@ -113,7 +141,7 @@
 <div class="container-fluid padding">
 	<div class="row welcome text-center">
 		<div class="col-12">
-			<h1 class="display-4">Built with ease</h1><hr>
+			<div class="pulse"><h1 class="display-4">Built with ease</h1><hr></div>
 		</div>
 		
 		<div class="col-12">
@@ -131,19 +159,16 @@
 <div class="row text-center padding">	
 	<div class="col-xs-12 col-md-6 col-lg-4">
 		<i class="fas  fa-code"></i></i>
-		<h3>HTML5</h3>
-		<p>Description</p>
+		<div class="shake-slow"><h3>HTML5</h3></div>
 
 	</div>
 	<div class="col-xs-12 col-md-6 col-lg-4">
 		<i class="fas fa-bold"></i>
-		<h3>Bootstrap</h3>
-		<p>Description</p>
+		<div class="shake-slow"><h3>Bootstrap</h3></div>
 	</div>
 	<div class="col-xs-12 col-md-4">
 		<i class="fab fa-css3"></i>
-		<h3>CSS</h3>	
-		<p>Description</p>
+		<div class="shake-slow"><h3>CSS</h3></div>
 	</div>
 </div>
 
@@ -155,16 +180,13 @@
 <div class="container-fluid padding" id="about">
 	<div class="row padding">
 		<div class="col-lg-6">
-			<h2>Details</h2>
-			<p style="font-size:20px;text-align:justify">Mercury is a text chat app for project collaborators and study groups. It is a student project based on Discord. It can bring people together through a love of productivity and efficiency. Once there, they can join a chat they've been invited to or they can create private groups and invite their friends to collaborate or study together. This app is special because each group can be further divided into sub-groups or fields, created for the sole purpose of dividing tasks and subjects, and avoiding clutter. They can be used by any member of the group. Personal messages are also available.</p>
-			<br>
-			<button href="#" class="btn btn-primary">Learn more</a>	 
+			<div class="pulse"><h1>Details</h1></div>
+			<p class="description" style="font-size:20px;text-align:justify">Mercury is a text chat app for project collaborators and study groups. It is a student project based on Discord. It can bring people together through a love of productivity and efficiency. Once there, they can join a chat they've been invited to or they can create private groups and invite their friends to collaborate or study together. This app is special because each group can be further divided into sub-groups or fields, created for the sole purpose of dividing tasks and subjects, and avoiding clutter. They can be used by any member of the group. Personal messages are also available.</p>
 
 		</div>
 		<div class="col-md-6">
 			<br><br>
-			<img  src="static/img/greekgod.jpg" class="img-fluid">
-			<p style="color:darkblue;text-align:center;font-style: italic;">The name is inpsired from the Greek Messenger of Gods Mercury</p>
+			<div id="image-roll" class="pulse"><img src="static/img/mercury_god_chicken.jpg" class="img-fluid" style="max-height: 350px"></div>
 		</div>
 	</div>
 </div>
@@ -184,7 +206,7 @@
 <div class="container-fluid padding">
 <div class="row welcome text-center">
 	<div class="col-12">
-		<h1 class="display-4" id="meet_the_team">Meet the team</h1><hr>
+		<div class="pulse"><div class="shake-slow"><h1 class="display-4" id="meet_the_team">Meet the team</h1><hr></div></div>
 	</div>
 </div>
 </div>
@@ -197,9 +219,9 @@
 		<div class="card">
 			
 			<div class="card-body">
-				<h4 class="card-title">Arjun AS</h4>
+				<div class="shake-slow"><h4 class="card-title">Arjun AS</h4></div>
 				<p class="card-text"></p>
-				<a href="#" class="btn btn-outline-secondary">See profile</a>
+				
 
 			</div>
 		</div>
@@ -208,9 +230,8 @@
 		<div class="card">
 			
 			<div class="card-body">
-				<h4 class="card-title">Aniruddh NS</h4>
+				<div class="shake-slow"><h4 class="card-title">Aniruddh NS</h4></div>
 				<p class="card-text"></p>
-				<a href="#" class="btn btn-outline-secondary">See profile</a>
 				
 			</div>
 		</div>
@@ -219,9 +240,8 @@
 		<div class="card">
 			
 			<div class="card-body">
-				<h4 class="card-title">Chandan</h4>
+				<div class="shake-slow"><h4 class="card-title">Chandan</h4></div>
 				<p class="card-text"></p>
-				<a href="#" class="btn btn-outline-secondary">See profile</a>
 					
 			</div>
 		</div>
@@ -230,9 +250,8 @@
 		<div class="card">
 			
 			<div class="card-body">
-				<h4 class="card-title">Praneeth</h4>
+				<div class="shake-slow"><h4 class="card-title">Praneeth</h4></div>
 				<p class="card-text"></p>
-				<a href="#" class="btn btn-outline-secondary">See profile</a>
 			</div>
 		</div>
 	</div>
@@ -247,7 +266,7 @@
 <div class="container-fluid padding">
 <div class="row text-center padding">
 	<div class="col-12" id="connect">
-		<h2>Connect</h2>
+		<div class="pulse"><div class="shake-slow"><h2>Connect</h2></div></div><hr>
 	</div>
 	<div class="col-12 social padding">
 		<a aria-setsize="40px" href="#"><i class="fab fa-facebook"></i></a>
@@ -260,12 +279,12 @@
 <!--- Footer -->
 <footer>
 <div class="container-fluid" padding>
-	<div class="row text-center">
+	<div id="footer"><div class="row text-center">
 		<div class="col-md-4">
 			<img src="static/img/mercury.png">
 			<hr class="light">
-			<p>555-555-55555</p>
-		</div>
+			
+		</div></div>
 	</div>
 </div>
 </footer>
